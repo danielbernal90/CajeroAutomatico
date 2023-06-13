@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+        <!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css/style.css">
+    <title>Simulador | Cajero Automatico</title>
+        <!-- Estilos CSS para el formato -->
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+    
+        h1 {
+          text-align: center;
+        }
+    
+        .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    
+        .resultado {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    </style>
+</head>
+        <!-- Body -->
+<body>
+    <h1>Simulador</h1>
+  <div class="container" id="login">
+    <h2>Inicio de Sesión</h2>
+    <form onsubmit="loginSubmit(event)">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" required>
+      <br>
+      <label for="contraseña">Contraseña:</label>
+      <input type="password" id="contraseña" required>
+      <br>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div class="resultado" id="resultado"></div>
+  </div>
+
+  <div class="container" id="cajero" style="display: none;">
+    <h2>Cajero Automático</h2>
+    <form onsubmit="retirarDinero(event)">
+      <label for="cantidadRetiro">Cantidad a Retirar:</label>
+      <input type="number" id="cantidadRetiro" required>
+      <br>
+      <button type="submit">Retirar</button>
+    </form>
+    <form onsubmit="depositarDinero(event)">
+      <label for="cantidadDeposito">Cantidad a Depositar:</label>
+      <input type="number" id="cantidadDeposito" required>
+      <br>
+      <button type="submit">Depositar</button>
+    </form>
+    <div class="resultado" id="resultadoOperacion"></div>
+    <div class="resultado" id="saldo">Saldo actual: 1000</div>
+  </div>
+        <!-- Agregar botón de cierre de sesión -->
+<button onclick="cerrarSesion()">Cerrar Sesión</button>
+
+        <!-- JavaScrpt -->
+    <script src="main.js"></script>
+</body>
+</html>
